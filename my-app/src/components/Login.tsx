@@ -1,19 +1,18 @@
 import { Box } from "@mui/material";
-import { From } from "./From";
+import { FillInForm } from "./FillInForm";
 
 export const Login = () => {
   return (
     <Box
       sx={{
-        position:"absolute",
-        top:"25%",
-        left:"35%",
-        border: "solid 5px",
+        position: "absolute",
+        top: "25%",
+        left: "35%",
         width: 500,
         height: 500,
       }}
     >
-      <From type="login" />
+      <FillInForm type="login" />
     </Box>
   );
 };

@@ -2,13 +2,12 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./App.css";
 import { Login } from "./components/Login";
+import { NavigationLink } from "./components/NavigationLink";
 
 function App() {
   return (
     <div>
-      <Box sx={{ float: "right", margin: 10, cursor: "pointer" }}>
-        <Link to="/signup">Create Account </Link>
-      </Box>
+     <NavigationLink navigationText="sign up"/>
       <div>
       <Login />
       </div>

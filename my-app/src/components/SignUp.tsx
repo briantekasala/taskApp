@@ -1,7 +1,9 @@
-import { From } from "./From";
+import { FillInForm } from "./FillInForm";
+import { NavigationLink } from "./NavigationLink";
 
 export const SignUp = () => {
   return <div>
-    <From type="signUp"/>
+    <NavigationLink navigationText="home"/>
+    <FillInForm type="sign Up"/>
   </div>;
 };
