@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import { Login } from "./components/Login";
+import { Login } from "./pages/Login";
 import { NavigationLink } from "./components/NavigationLink";
 
 function App() {

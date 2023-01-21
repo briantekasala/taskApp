@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { FillInForm } from "./FillInForm";
+import { FillInForm } from "../components/FillInForm";
 
 export const Login = () => {
   return (

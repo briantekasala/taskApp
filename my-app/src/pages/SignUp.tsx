@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { FillInForm } from "./FillInForm";
-import { NavigationLink } from "./NavigationLink";
+import { FillInForm } from "../components/FillInForm";
+import { NavigationLink } from "../components/NavigationLink";
 
 export const SignUp = () => {
   return (

@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SignUp } from "./components/SignUp";
+import { SignUp } from "./pages/SignUp";
+import { Schedule } from "./pages/Schedule";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,8 +13,8 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<App/>
-  } ,
+    element: <App />,
+  },
   {
     path: "/home",
     element: <App />,
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/sign up",
     element: <SignUp />,
+  },
+  {
+    path: "/planning",
+    element: <Schedule />,
   },
 ]);
 

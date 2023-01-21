@@ -14,6 +14,7 @@ interface IForm {
 export const FillInForm = (props: IForm) => {
   const { type ,formTitle } = props;
   return (
+    <form>
     <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }}>
       <CardContent>
       <Typography gutterBottom variant="h5">{formTitle}</Typography>
@@ -25,6 +26,7 @@ export const FillInForm = (props: IForm) => {
               placeholder="enter your username"
               fullWidth
               required
+
             />
           </Grid>
           <Grid xs={12} item>
@@ -74,5 +76,6 @@ export const FillInForm = (props: IForm) => {
         </Grid>
       </CardContent>
     </Card>
+    </form>
   );
 };
