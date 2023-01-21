@@ -4,16 +4,20 @@ import CreateIcon from "@mui/icons-material/Create";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 interface IForm {
   type: string;
+  formTitle: string
 }
 
 export const FillInForm = (props: IForm) => {
-  const { type } = props;
+  const { type ,formTitle } = props;
   return (
     <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }}>
       <CardContent>
+      <Typography gutterBottom variant="h5">{formTitle}</Typography>
+      <Typography gutterBottom color="textSecondary"  variant="body2" component="p"> {formTitle} to see your task</Typography>
         <Grid container spacing={4}>
           <Grid xs={12} item>
             <TextField

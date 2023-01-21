@@ -12,7 +12,7 @@ export const Login = () => {
         height: 500,
       }}
     >
-      <FillInForm type="login" />
+      <FillInForm type="login" formTitle="Login" />
     </Box>
   );
 };
