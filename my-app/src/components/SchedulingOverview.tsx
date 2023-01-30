@@ -1,4 +1,4 @@
-import { Box, ListItem } from "@mui/material";
+import { Box, ListItem, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List/List";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
@@ -11,7 +11,22 @@ export const SchedulingOverview = (props: ISchedulingOverview) => {
   const { scheduleData } = props;
   return (
     <Box>
-      <Grid sx={{ border: "solid", padding: "10px" }} container spacing={2}>
+      <Typography
+        gutterBottom
+        variant="h4"
+        sx={{
+          textAlign: "center",
+          paddingTop: "5px",
+          md: {
+            padding: "15px",
+            marginLeft: "-13px",
+            justifyContent: "center",
+          },
+        }}
+      >
+        Schedule Over View
+      </Typography>
+      <Grid sx={{ padding: "15px" }} container spacing={2} xs={12}>
         <Grid item>
           <List sx={{ fontWeight: "bold" }}>
             <ListItem>Datum</ListItem>
@@ -31,6 +46,16 @@ export const SchedulingOverview = (props: ISchedulingOverview) => {
         {scheduleData.map((data: IPersonAssignmentList) => {
           return <PersonAssignment personAssignment={data} />;
         })}
+      </Grid>
+      <Grid container >
+
+        <Grid item xs={6} sx={{border:"solid"}} >
+          woensdag
+        </Grid>
+        <Grid item xs={6}>
+          zondag
+        </Grid>
+
       </Grid>
     </Box>
   );
