@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const scheduleSchema = new Schema(
   {
-    day: { type: String, required: true },
-    nameMicroG: { type: String, required: true },
-    nameMicroD: { type: String, required: true },
-    microPodium: { type: String, required: true },
-    usher: { type: String, required: true },
-    sono: { type: String, required: true },
+    day: { type: String, require: true },
+    nameMicroG: { type: String, require: true },
+    nameMicroD: { type: String, require: true },
+    microPodium: { type: String, require: true },
+    usher: { type: String, require: true },
+    sono: { type: String, require: true },
   },
   {
     timestamps: true,
