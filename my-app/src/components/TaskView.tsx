@@ -16,6 +16,16 @@ export const TaskView = (props: ITaskDisplay) => {
       const entries = Object.entries(task);
       for (const [key, value] of entries) {
         if (value === userName) {
+          if (key === "nameMicroG") {
+            console.log(key)
+            return taskOfUser = "microG";
+          }
+          if (key === "nameMicroD") {
+            return taskOfUser = "microD";
+          }
+          if (key === "usher") {
+            return taskOfUser = "acceuil";
+          }
           taskOfUser = key;
         }
       }
@@ -33,13 +43,13 @@ export const TaskView = (props: ITaskDisplay) => {
   return (
     <Box>
       <TaskInformation
-        key={`${userName}-Information`}
+        key={`${userName}-Information-1`}
         data={taskData}
         task={task}
         userName={userName}
       />
       <TaskInformation
-        key={`${userName}-Information`}
+        key={`${userName}-Information-2`}
         data={nextWeekTaskData}
         task={nextWeekTask}
         userName={userName}

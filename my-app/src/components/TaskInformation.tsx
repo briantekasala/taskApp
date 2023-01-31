@@ -13,7 +13,7 @@ export const TaskInformation = (props: ITaksInfromation) => {
   return (
     <>
       <Box>
-        <Typography variant="h5" sx={{ textAlign: "center" , padding:"10px" }}>
+        <Typography variant="h5" sx={{ textAlign: "center" , padding:"10px" , }}>
           {data.map((day) => {
             return day.day;
           })}

@@ -1,5 +1,4 @@
 import { Box, Grid } from "@mui/material";
-import { useState } from "react";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
 import { TaskView } from "./TaskView";
 
@@ -62,15 +61,34 @@ export const TaskOverView = (props: ITaskOverView) => {
   const sunday = getSundayDate();
   return (
     <Box>
-      <Grid container>
-        <Grid item xs={6} sx={{ padding:"15px"}}>
+      <Grid container sx={{ padding: "15px" }}>
+        <Grid
+          item
+          xs={6}
+          sx={{
+            padding: "15px",
+            borderRadius: "10px",
+            border:"8px solid",
+            borderImage:"linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0"
+            
+          }}
+        >
           <TaskView
             taskData={getTodayTasks(wednesday)}
             nextWeekTaskData={getNextWeekTask(wednesday)}
             userName="Brian Teka Sala"
           />
         </Grid>
-        <Grid item xs={6} sx={{ padding:"15px"}}>
+        <Grid
+          item
+          xs={6}
+          sx={{
+            padding: "15px",
+            borderRadius: "10px",
+            border:"8px solid",
+            borderImage:"linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0"
+          }}
+        >
           <TaskView
             userName="Brian Teka Sala"
             taskData={getTodayTasks(sunday)}
