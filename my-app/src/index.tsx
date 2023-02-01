@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignUp } from "./pages/SignUp";
 import { Schedule } from "./pages/Schedule";
+import { PlanningManagement } from "./pages/PlanningManagement";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
   },
   {
     path: "/home",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/planning",
     element: <Schedule />,
+  },
+  {
+    path: "/planningManagement",
+    element: <PlanningManagement />,
   },
 ]);
 

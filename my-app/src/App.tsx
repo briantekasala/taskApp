@@ -6,9 +6,9 @@ import { NavigationLink } from "./components/NavigationLink";
 function App() {
   return (
     <Box>
-     <NavigationLink navigationText="sign up"/>
+      <NavigationLink navigationText="sign up" />
       <Box>
-      <Login />
+        <Login />
       </Box>
     </Box>
   );
