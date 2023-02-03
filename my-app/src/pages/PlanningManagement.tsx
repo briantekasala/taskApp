@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -8,6 +7,9 @@ import Box from "@mui/material/Box";
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
 import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
 import ModeEditOutlineRoundedIcon from "@mui/icons-material/ModeEditOutlineRounded";
+import { CreatePlanning } from "../components/planningManagement/CreatePlanning";
+import { PlanningList } from "../components/planningManagement/PlanningList";
+import { UpdatePlanning } from "../components/planningManagement/UpdatePlanning";
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -27,7 +29,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ textAlign:"center" , padding:"15px" }}>
+        <Box sx={{ textAlign: "center", padding: "15px" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -87,13 +89,13 @@ export const PlanningManagement = () => {
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        Item One
+        <CreatePlanning/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <PlanningList/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <UpdatePlanning/>
       </TabPanel>
     </Box>
   );

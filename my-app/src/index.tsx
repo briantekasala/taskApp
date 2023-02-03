@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignUp } from "./pages/SignUp";
 import { Schedule } from "./pages/Schedule";
 import { PlanningManagement } from "./pages/PlanningManagement";
+import { DateSelector } from "./components/planningManagement/BasicDatePicker";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +16,7 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/home",
@@ -32,11 +34,15 @@ const router = createBrowserRouter([
     path: "/planningManagement",
     element: <PlanningManagement />,
   },
+  {
+    path: "/test",
+    element: <DateSelector />,
+  },
 ]);
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+   <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

@@ -17,14 +17,14 @@ export const TaskView = (props: ITaskDisplay) => {
       for (const [key, value] of entries) {
         if (value === userName) {
           if (key === "nameMicroG") {
-            console.log(key)
-            return taskOfUser = "microG";
+            console.log(key);
+            return (taskOfUser = "microG");
           }
           if (key === "nameMicroD") {
-            return taskOfUser = "microD";
+            return (taskOfUser = "microD");
           }
           if (key === "usher") {
-            return taskOfUser = "acceuil";
+            return (taskOfUser = "acceuil");
           }
           taskOfUser = key;
         }

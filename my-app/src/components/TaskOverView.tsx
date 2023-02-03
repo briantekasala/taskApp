@@ -68,9 +68,9 @@ export const TaskOverView = (props: ITaskOverView) => {
           sx={{
             padding: "15px",
             borderRadius: "10px",
-            border:"8px solid",
-            borderImage:"linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0"
-            
+            border: "8px solid",
+            borderImage:
+              "linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0",
           }}
         >
           <TaskView
@@ -85,8 +85,9 @@ export const TaskOverView = (props: ITaskOverView) => {
           sx={{
             padding: "15px",
             borderRadius: "10px",
-            border:"8px solid",
-            borderImage:"linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0"
+            border: "8px solid",
+            borderImage:
+              "linear-gradient(to left,rgba(104, 85, 224, 1),#e055b1)1 0",
           }}
         >
           <TaskView

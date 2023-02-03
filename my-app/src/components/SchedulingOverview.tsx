@@ -43,8 +43,13 @@ export const SchedulingOverview = (props: ISchedulingOverview) => {
             <ListItem sx={{ backgroundColor: "#e66c7d" }}>Sono</ListItem>
           </List>
         </Grid>
-        {scheduleData.map((data: IPersonAssignmentList , index:number) => {
-          return <PersonAssignment key={`assignment${index}`} personAssignment={data} />;
+        {scheduleData.map((data: IPersonAssignmentList, index: number) => {
+          return (
+            <PersonAssignment
+              key={`assignment${index}`}
+              personAssignment={data}
+            />
+          );
         })}
       </Grid>
     </Box>
