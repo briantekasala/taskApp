@@ -6,6 +6,26 @@ export class ScheduleService implements IScheduleService {
   constructor(apiURl: string) {
     this.url = apiURl;
   }
+  async makeSchedule(data: any): Promise<void> {
+    const createSchedule: IPersonAssignmentList = data as IPersonAssignmentList;
+    console.log(createSchedule);
+
+    try {
+      const addUserInSchedule = await fetch(`${this.url}/makeSchedule`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(createSchedule),
+      });
+
+      if (!addUserInSchedule.ok) {
+        throw new Error(await addUserInSchedule.text());
+      }
+    } catch (error) {
+      throw new Error("error", { cause: error });
+    }
+  }
   async getScheduleService() {
     try {
       const user = await fetch(`${this.url}/schedule`, {
@@ -18,8 +38,8 @@ export class ScheduleService implements IScheduleService {
       const scheduleList: IPersonAssignmentList[] = await user.json();
 
       return scheduleList;
-    } catch (error: any) {
-      throw new Error(error);
+    } catch (error) {
+      throw new Error("error", { cause: error });
     }
   }
 }

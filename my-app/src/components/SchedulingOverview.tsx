@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import List from "@mui/material/List/List";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
 import { PersonAssignment } from "./PersonAssignement";
+import React from "react";
 
 interface ISchedulingOverview {
   scheduleData: IPersonAssignmentList[];
@@ -17,11 +18,6 @@ export const SchedulingOverview = (props: ISchedulingOverview) => {
         sx={{
           textAlign: "center",
           paddingTop: "5px",
-          md: {
-            padding: "15px",
-            marginLeft: "-13px",
-            justifyContent: "center",
-          },
         }}
       >
         Schedule Over View

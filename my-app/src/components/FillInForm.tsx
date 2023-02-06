@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import React from "react";
 
 interface IForm {
   type: string;
@@ -14,7 +15,7 @@ interface IForm {
 export const FillInForm = (props: IForm) => {
   const { type ,formTitle } = props;
   return (
-    <form>
+    
     <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }}>
       <CardContent>
       <Typography gutterBottom variant="h5">{formTitle}</Typography>
@@ -76,6 +77,6 @@ export const FillInForm = (props: IForm) => {
         </Grid>
       </CardContent>
     </Card>
-    </form>
+  
   );
 };

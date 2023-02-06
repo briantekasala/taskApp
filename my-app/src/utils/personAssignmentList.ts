@@ -1,5 +1,5 @@
 export interface IPersonAssignmentList {
-  day: string;
+  day: Date;
   nameMicroG: string;
   nameMicroD: string;
   microPodium: string;

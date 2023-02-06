@@ -1,6 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
 import { TaskView } from "./TaskView";
+import React from "react";
 
 interface ITaskOverView {
   scheduleData: IPersonAssignmentList[];
@@ -24,7 +25,6 @@ export const TaskOverView = (props: ITaskOverView) => {
       const numberToSubtract = dayNumber - 3;
       today.setDate(today.getDate() - numberToSubtract);
       wednesday = today;
-      console.log(wednesday);
       return wednesday;
     }
     return today;
@@ -46,14 +46,18 @@ export const TaskOverView = (props: ITaskOverView) => {
 
   const getTodayTasks = (date: Date) => {
     const day = date.toDateString();
-    const taskData = scheduleData.filter((data) => data.day === day);
+    const taskData = scheduleData.filter(
+      (data) => new Date(data.day).toDateString() === day
+    );
+
     return taskData;
   };
   const getNextWeekTask = (date: Date) => {
     date.setDate(date.getDate() + 7);
     let nextWeekTask = date;
     const nextWeekTaskData = scheduleData.filter(
-      (data) => data.day === nextWeekTask.toDateString()
+      (data) =>
+        new Date(data.day).toDateString() === nextWeekTask.toDateString()
     );
     return nextWeekTaskData;
   };

@@ -29,9 +29,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ textAlign: "center", padding: "15px" }}>
-          <Typography>{children}</Typography>
-        </Box>
+        <Box sx={{ textAlign: "center", padding: "15px" }}>{children}</Box>
       )}
     </div>
   );
@@ -89,13 +87,13 @@ export const PlanningManagement = () => {
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        <CreatePlanning/>
+        <CreatePlanning />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <PlanningList/>
+        <PlanningList />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <UpdatePlanning/>
+        <UpdatePlanning />
       </TabPanel>
     </Box>
   );

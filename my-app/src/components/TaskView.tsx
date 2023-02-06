@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
 import { TaskInformation } from "./TaskInformation";
+import React from "react";
 
 interface ITaskDisplay {
   userName: string;
@@ -17,7 +18,6 @@ export const TaskView = (props: ITaskDisplay) => {
       for (const [key, value] of entries) {
         if (value === userName) {
           if (key === "nameMicroG") {
-            console.log(key);
             return (taskOfUser = "microG");
           }
           if (key === "nameMicroD") {

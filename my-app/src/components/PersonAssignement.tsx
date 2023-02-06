@@ -2,15 +2,17 @@ import { Grid } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
+import React from "react";
 export interface IPersonAssignment {
   personAssignment: IPersonAssignmentList;
 }
 export const PersonAssignment = (props: IPersonAssignment) => {
   const { personAssignment } = props;
+  const date = new Date(personAssignment.day);
   return (
     <Grid item>
       <List>
-        <ListItem>{personAssignment.day}</ListItem>
+        <ListItem>{date.toDateString()}</ListItem>
         <ListItem sx={{ backgroundColor: "#4472C4", color: "white" }}>
           {personAssignment.nameMicroG}
         </ListItem>

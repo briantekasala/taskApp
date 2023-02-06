@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
 import { Link } from "react-router-dom";
+import React from "react";
 
 export interface INavigation {
   navigationText: string;

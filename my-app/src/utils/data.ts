@@ -2,7 +2,7 @@ import { IPersonAssignmentList } from "./personAssignmentList";
 
 export const data: IPersonAssignmentList[] = [
   {
-    day: new Date(2023, 0, 25).toDateString(),
+    day: new Date(2023, 0, 25),
     nameMicroG: "Elie bhizende",
     nameMicroD: "Chris Clares",
     microPodium: "Rachid Ouarmina",
@@ -10,7 +10,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Josuel Fanuel",
   },
   {
-    day: new Date(2023, 0, 29).toDateString(),
+    day: new Date(2023, 0, 29),
     nameMicroG: "Jeff De Clerck",
     nameMicroD: "Gilles Merciny",
     microPodium: "Jules De Clerck",
@@ -18,7 +18,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Owen Nkosi Sala",
   },
   {
-    day: new Date(2023, 1, 1).toDateString(),
+    day: new Date(2023, 1, 1),
     nameMicroG: "Owen Nkosi Sala",
     nameMicroD: "jules De Clerck",
     microPodium: "Adje Wilson",
@@ -26,7 +26,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Brian Teka Sala",
   },
   {
-    day: new Date(2023, 1, 5).toDateString(),
+    day: new Date(2023, 1, 5),
     nameMicroG: "rachid ouarmina",
     nameMicroD: "Jeff de Clerck",
     microPodium: "Josue Fanuel",
@@ -34,7 +34,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Gilles Merciny",
   },
   {
-    day: new Date(2023, 1, 8).toDateString(),
+    day: new Date(2023, 1, 8),
     nameMicroG: "Jules de Clerck",
     nameMicroD: "Elie Bhizende",
     microPodium: "Owen Nkosi Sala",
@@ -42,7 +42,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Rachid Ourmina",
   },
   {
-    day: new Date(2023, 1, 12).toDateString(),
+    day: new Date(2023, 1, 12),
     nameMicroG: "Brian Teka Sala",
     nameMicroD: "Adje wilson",
     microPodium: "Gilles Merciny",
@@ -50,7 +50,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Jeff De Clerck",
   },
   {
-    day: new Date(2023, 1, 15).toDateString(),
+    day: new Date(2023, 1, 15),
     nameMicroG: "Josue Fanuel",
     nameMicroD: "Owen Nkosi Sala",
     microPodium: "Elie bihzende",
@@ -58,7 +58,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Brian Teka Sala",
   },
   {
-    day: new Date(2023, 1, 19).toDateString(),
+    day: new Date(2023, 1, 19),
     nameMicroG: "Adje Wilson",
     nameMicroD: "Chris Clares",
     microPodium: "Jules De Clerck",
@@ -66,7 +66,7 @@ export const data: IPersonAssignmentList[] = [
     sono: "Jeff de Clerck",
   },
   {
-    day: new Date(2023, 1, 22).toDateString(),
+    day: new Date(2023, 1, 22),
     nameMicroG: "Brian teka sala",
     nameMicroD: "owen Nkosi Sala",
     microPodium: "Gilles Merciny",

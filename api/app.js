@@ -35,5 +35,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", require("./routes/index"));
 app.use("/schedule",require("./routes/schedule"));
+app.use("/makeSchedule",require("./routes/makeSchedule"));
 
 module.exports = app;
