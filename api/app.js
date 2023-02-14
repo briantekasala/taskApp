@@ -34,7 +34,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", require("./routes/index"));
-app.use("/schedule",require("./routes/schedule"));
-app.use("/makeSchedule",require("./routes/makeSchedule"));
+app.use("/schedule", require("./routes/schedule.routes"));
+app.use("/makeSchedule", require("./routes/makeSchedule.routes"));
+app.use("/login", require("./routes/login.routes"));
+app.use("/signup", require("./routes/signUp.routes"));
 
 module.exports = app;

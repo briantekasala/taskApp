@@ -24,7 +24,6 @@ export const ModificationForm = (props: IModificationForm) => {
   } = useForm();
   const onSubmit = (data: any) => {
     createUser.makeSchedule(data);
-    console.log("verstuurd ");
     setAddedItem((prevState) => !prevState);
   };
 

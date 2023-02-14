@@ -30,7 +30,7 @@ export const TaskOverView = (props: ITaskOverView) => {
     return today;
   };
   const getSundayDate = () => {
-    const today = new Date(2023, 0, 30);
+    const today = new Date();
     let sunday;
     const dayNumber = today.getDay() === 0 ? 7 : today.getDay();
 

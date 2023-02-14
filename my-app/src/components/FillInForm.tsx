@@ -5,78 +5,112 @@ import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { FormService } from "../services/formService";
 
 interface IForm {
   type: string;
-  formTitle: string
+  formTitle: string;
+  setCompletedForm: React.Dispatch<React.SetStateAction<boolean>>;
+  setFillInCorrect: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const FillInForm = (props: IForm) => {
-  const { type ,formTitle } = props;
-  return (
-    
-    <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }}>
-      <CardContent>
-      <Typography gutterBottom variant="h5">{formTitle}</Typography>
-      <Typography gutterBottom color="textSecondary"  variant="body2" component="p"> {formTitle} to see your task</Typography>
-        <Grid container spacing={4}>
-          <Grid xs={12} item>
-            <TextField
-              label="user name"
-              placeholder="enter your username"
-              fullWidth
-              required
+  const { type, formTitle, setCompletedForm, setFillInCorrect } = props;
+  const formMethods = new FormService("http://localhost:3008");
 
-            />
-          </Grid>
-          <Grid xs={12} item>
-            <TextField
-              label="password"
-              placeholder="enter your password"
-              fullWidth
-              required
-            />
-          </Grid>
-          {type === "login" ? (
-            <Grid xs={12} item>
-              <Button
-                type="submit"
-                color="primary"
-                startIcon={<LoginIcon />}
-                fullWidth
-                variant="outlined"
-              >
-                Login
-              </Button>
-            </Grid>
-          ) : (
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async (data: any) => {
+    if (type === "sign Up") {
+      formMethods.signUp(data);
+      setCompletedForm((prevState) => !prevState);
+      setFillInCorrect((prevStateFillIn) => !prevStateFillIn);
+    } else {
+      let result = await formMethods.userLogin(data);
+      if (result.length === 1) {
+        setCompletedForm((prevCompletedFormState) => !prevCompletedFormState);
+        setFillInCorrect((prevStateFillIn) => !prevStateFillIn);
+      } else {
+        setCompletedForm((prevCompletedFormState) => !prevCompletedFormState);
+      }
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Card style={{ maxWidth: 500, margin: "0 auto", padding: "20px 5px" }}>
+        <CardContent>
+          <Typography gutterBottom variant="h5">
+            {formTitle}
+          </Typography>
+          <Typography
+            gutterBottom
+            color="textSecondary"
+            variant="body2"
+            component="p"
+          >
+            {formTitle} to see your task
+          </Typography>
+          <Grid container spacing={4}>
             <Grid xs={12} item>
               <TextField
-                type="email"
-                label="email"
-                placeholder="enter your email address"
+                label="user name"
+                placeholder="enter your username"
                 fullWidth
                 required
+                {...register("user")}
               />
             </Grid>
-          )}
-          {type === "sign Up" && (
             <Grid xs={12} item>
-              <Button
-              type="submit"
-              color="primary"
-              startIcon={<CreateIcon />}
-              variant="outlined"
-              fullWidth
-            >
-              Create
-            </Button>
+              <TextField
+                label="password"
+                placeholder="enter your password"
+                fullWidth
+                required
+                type={"password"}
+                {...register("password")}
+              />
             </Grid>
-          )}
-        </Grid>
-      </CardContent>
-    </Card>
-  
+            {type === "login" ? (
+              <Grid xs={12} item>
+                <Button
+                  type="submit"
+                  color="primary"
+                  startIcon={<LoginIcon />}
+                  fullWidth
+                  variant="outlined"
+                >
+                  Login
+                </Button>
+              </Grid>
+            ) : (
+              <Grid xs={12} item>
+                <TextField
+                  type="email"
+                  label="email"
+                  placeholder="enter your email address"
+                  fullWidth
+                  required
+                  {...register("email")}
+                />
+              </Grid>
+            )}
+            {type === "sign Up" && (
+              <Grid xs={12} item>
+                <Button
+                  type="submit"
+                  color="primary"
+                  startIcon={<CreateIcon />}
+                  variant="outlined"
+                  fullWidth
+                >
+                  Create
+                </Button>
+              </Grid>
+            )}
+          </Grid>
+        </CardContent>
+      </Card>
+    </form>
   );
 };

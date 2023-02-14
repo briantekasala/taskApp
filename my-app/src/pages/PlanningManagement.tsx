@@ -2,13 +2,10 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
-import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
 import ModeEditOutlineRoundedIcon from "@mui/icons-material/ModeEditOutlineRounded";
 import { CreatePlanning } from "../components/planningManagement/CreatePlanning";
-import { PlanningList } from "../components/planningManagement/PlanningList";
 import { UpdatePlanning } from "../components/planningManagement/UpdatePlanning";
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -72,16 +69,10 @@ export const PlanningManagement = () => {
             {...a11yProps(0)}
           />
           <Tab
-            icon={<FormatListBulletedRoundedIcon />}
-            sx={{ color: "white" }}
-            label="Planning List"
-            {...a11yProps(1)}
-          />
-          <Tab
             icon={<ModeEditOutlineRoundedIcon />}
             sx={{ color: "white" }}
             label="update planning"
-            {...a11yProps(2)}
+            {...a11yProps(1)}
           />
         </Tabs>
       </AppBar>
@@ -90,9 +81,6 @@ export const PlanningManagement = () => {
         <CreatePlanning />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <PlanningList />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
         <UpdatePlanning />
       </TabPanel>
     </Box>

@@ -5,13 +5,14 @@ import React from "react";
 
 export interface INavigation {
   navigationText: string;
+  floatValue: string;
 }
 export const NavigationLink = (props: INavigation) => {
-  const { navigationText } = props;
+  const { navigationText, floatValue } = props;
   return (
     <Box
       sx={{
-        float: "right",
+        float: `${floatValue}`,
         cursor: "pointer",
         backgroundColor: "rgba(104, 85, 224, 1)",
         border: 0,
@@ -23,14 +24,16 @@ export const NavigationLink = (props: INavigation) => {
         boxShadow: "0 0 20px rgba(104,85,224,0.2)",
         transition: "0.4s",
         textAlign: "center",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
       }}
     >
       <Link
         style={{ textDecoration: "none", color: "white" }}
         to={`/${navigationText}`}
       >
-        <Typography variant="body1">{navigationText}</Typography>
+        <Typography variant="body1">
+          {navigationText === "" ? "home" : navigationText}
+        </Typography>
       </Link>
     </Box>
   );

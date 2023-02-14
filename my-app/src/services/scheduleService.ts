@@ -8,7 +8,6 @@ export class ScheduleService implements IScheduleService {
   }
   async makeSchedule(data: any): Promise<void> {
     const createSchedule: IPersonAssignmentList = data as IPersonAssignmentList;
-    console.log(createSchedule);
 
     try {
       const addUserInSchedule = await fetch(`${this.url}/makeSchedule`, {
