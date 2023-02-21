@@ -5,8 +5,10 @@ import React from "react";
 
 interface ITaskOverView {
   scheduleData: IPersonAssignmentList[];
+  user:any;
 }
 export const TaskOverView = (props: ITaskOverView) => {
+  const { user  } = props
   let scheduleData: IPersonAssignmentList[] = props.scheduleData;
   const getWednesdayDate = () => {
     const today = new Date();
@@ -80,7 +82,7 @@ export const TaskOverView = (props: ITaskOverView) => {
           <TaskView
             taskData={getTodayTasks(wednesday)}
             nextWeekTaskData={getNextWeekTask(wednesday)}
-            userName="Brian Teka Sala"
+            userName={user}
           />
         </Grid>
         <Grid
@@ -95,7 +97,7 @@ export const TaskOverView = (props: ITaskOverView) => {
           }}
         >
           <TaskView
-            userName="Brian Teka Sala"
+            userName={user}
             taskData={getTodayTasks(sunday)}
             nextWeekTaskData={getNextWeekTask(sunday)}
           />

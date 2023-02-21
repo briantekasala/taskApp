@@ -7,6 +7,7 @@ import { AlertMessage } from "../components/AlertMessage";
 export const Login = () => {
   const [completedForm, setCompletedForm] = useState<boolean>(false);
   const [fillInCorrect, setFillInCorrect] = useState<boolean>(false);
+  const [userName , setUserName] = useState<string>("");
   return (
     <Box
       sx={{
@@ -23,6 +24,7 @@ export const Login = () => {
           formTitle="Login"
           setCompletedForm={setCompletedForm}
           setFillInCorrect={setFillInCorrect}
+          setUserName={setUserName}
         />
       ) : (
         <AlertMessage
@@ -31,6 +33,7 @@ export const Login = () => {
           text="see the planning"
           fillInCorrect={fillInCorrect}
           setCompletedForm={setCompletedForm}
+          userName={userName}
         />
       )}
     </Box>

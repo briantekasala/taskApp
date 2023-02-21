@@ -7,6 +7,7 @@ export interface ISuccessMessage {
   floatValue: string;
   text: string;
   fillInCorrect: boolean;
+  userName: string;
   setCompletedForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -16,6 +17,7 @@ export const AlertMessage = (props: ISuccessMessage) => {
     floatValue,
     text,
     fillInCorrect,
+    userName,
     setCompletedForm,
   } = props;
   return (
@@ -60,6 +62,7 @@ export const AlertMessage = (props: ISuccessMessage) => {
           <NavigationLink
             navigationText={navigationText}
             floatValue={floatValue}
+            userName={userName}
           />
         </Box>
       )}

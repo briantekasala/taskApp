@@ -7,12 +7,12 @@ import { AlertMessage } from "../components/AlertMessage";
 export const SignUp = () => {
   const [completedForm, setCompletedForm] = useState<boolean>(false);
   const [fillInCorrect, setFillInCorrect] = useState<boolean>(false);
-  console.log(completedForm);
+  const [userName , setUserName] = useState<string>("");
   return (
     <Box>
       {!completedForm ? (
         <Box>
-          <NavigationLink navigationText="Login" floatValue="right" />
+          <NavigationLink navigationText="Login" floatValue="right" userName="" />
           <Box
             sx={{
               position: "absolute",
@@ -27,6 +27,7 @@ export const SignUp = () => {
               formTitle="Sign up"
               setCompletedForm={setCompletedForm}
               setFillInCorrect={setFillInCorrect}
+              setUserName={setUserName}
             />
           </Box>
         </Box>
@@ -38,6 +39,7 @@ export const SignUp = () => {
             text="Login"
             fillInCorrect={fillInCorrect}
             setCompletedForm={setCompletedForm}
+            userName={userName}
           />
         </Box>
       )}

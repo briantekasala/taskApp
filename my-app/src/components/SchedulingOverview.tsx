@@ -2,8 +2,9 @@ import { Box, ListItem, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List/List";
 import { IPersonAssignmentList } from "../utils/personAssignmentList";
-import { PersonAssignment } from "./PersonAssignement";
+import { PersonAssignment } from "./PersonAssignment";
 import React from "react";
+
 
 interface ISchedulingOverview {
   scheduleData: IPersonAssignmentList[];

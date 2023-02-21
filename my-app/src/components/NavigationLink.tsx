@@ -6,9 +6,11 @@ import React from "react";
 export interface INavigation {
   navigationText: string;
   floatValue: string;
+  userName: string;
 }
 export const NavigationLink = (props: INavigation) => {
-  const { navigationText, floatValue } = props;
+  const { navigationText, floatValue ,userName } = props;
+
   return (
     <Box
       sx={{
@@ -29,11 +31,9 @@ export const NavigationLink = (props: INavigation) => {
     >
       <Link
         style={{ textDecoration: "none", color: "white" }}
-        to={`/${navigationText}`}
+        to={{pathname:`/${navigationText}`}} state={{user:userName}}
       >
-        <Typography variant="body1">
-          {navigationText === "" ? "home" : navigationText}
-        </Typography>
+        <Typography variant="body1">{navigationText}</Typography>
       </Link>
     </Box>
   );

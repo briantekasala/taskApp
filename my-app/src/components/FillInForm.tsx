@@ -14,10 +14,11 @@ interface IForm {
   formTitle: string;
   setCompletedForm: React.Dispatch<React.SetStateAction<boolean>>;
   setFillInCorrect: React.Dispatch<React.SetStateAction<boolean>>;
+  setUserName:React.Dispatch<React.SetStateAction<string>>
 }
 
 export const FillInForm = (props: IForm) => {
-  const { type, formTitle, setCompletedForm, setFillInCorrect } = props;
+  const { type, formTitle, setCompletedForm, setFillInCorrect,setUserName } = props;
   const formMethods = new FormService("http://localhost:3008");
 
   const { register, handleSubmit } = useForm();
@@ -31,6 +32,8 @@ export const FillInForm = (props: IForm) => {
       if (result.length === 1) {
         setCompletedForm((prevCompletedFormState) => !prevCompletedFormState);
         setFillInCorrect((prevStateFillIn) => !prevStateFillIn);
+        setUserName(result[0].user)
+        
       } else {
         setCompletedForm((prevCompletedFormState) => !prevCompletedFormState);
       }

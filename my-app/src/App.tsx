@@ -8,7 +8,7 @@ import React from "react";
 const App = () => {
   return (
     <Box>
-      <NavigationLink navigationText="sign up" floatValue="right" />
+      <NavigationLink navigationText="sign up" floatValue="right" userName="" />
       <Box>
         <Login />
       </Box>

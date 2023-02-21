@@ -4,7 +4,7 @@ import { IPersonAssignmentList } from "../../utils/personAssignmentList";
 import { DateSelector } from "./DateSelector";
 import CreateIcon from "@mui/icons-material/Create";
 import { useForm } from "react-hook-form";
-import { IPersonAssignment } from "../PersonAssignement";
+import { IPersonAssignment } from "../PersonAssignment";
 import { ScheduleService } from "../../services/scheduleService";
 
 interface IModificationForm {
